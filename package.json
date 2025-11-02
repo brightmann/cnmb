@@ -15,6 +15,7 @@
     "format:check": "prettier --check .",
     "clean": "rm -rf .next/ node_modules/"
   },
+  "packageManager": "pnpm@10.14.0",
   "dependencies": {
     "@mdx-js/mdx": "^3.1.0",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
@@ -55,5 +56,43 @@
     "tw-animate-css": "^1.3.0",
     "typescript": "^5",
     "typescript-eslint": "^8.34.0"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "printWidth": 80,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "css",
+    "importOrder": [
+      "^(react/(.*)$)|^(react$)",
+      "^(next/(.*)$)|^(next$)",
+      "<THIRD_PARTY_MODULES>",
+      "",
+      "^types$",
+      "^@/env(.*)$",
+      "^@/types/(.*)$",
+      "^@/config/(.*)$",
+      "^@/lib/(.*)$",
+      "^@/hooks/(.*)$",
+      "",
+      "^@/features/(.*)$",
+      "^@/components/shadcn-ui/(.*)$",
+      "^@/components/(.*)$",
+      "^@/styles/(.*)$",
+      "^@/app/(.*)$",
+      "",
+      "^[./]"
+    ],
+    "importOrderParserPlugins": [
+      "typescript",
+      "jsx"
+    ],
+    "plugins": [
+      "@ianvs/prettier-plugin-sort-imports",
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }
