@@ -1,10 +1,11 @@
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+
 import {
   Pagination as PaginationCN,
   PaginationContent,
   PaginationItem,
   PaginationLink,
 } from '@/components/shadcn-ui/pagination';
-import { Icons } from '@/components/icons';
 
 interface PaginationProps {
   currentPage: number;
@@ -72,7 +73,7 @@ export function Pagination({
             <PaginationLink
               href={`${basePath}/${paginationItems.prev.pageNumber}`}
             >
-              <Icons.chevronLeft className="size-4" />
+              <ChevronLeftIcon className="size-4" />
               <span className="sr-only">Go to prev page</span>
             </PaginationLink>
           </PaginationItem>
@@ -95,7 +96,7 @@ export function Pagination({
             <PaginationLink
               href={`${basePath}/${paginationItems.next.pageNumber}`}
             >
-              <Icons.chevronRight className="size-4" />
+              <ChevronRightIcon className="size-4" />
               <span className="sr-only">Go to next page</span>
             </PaginationLink>
           </PaginationItem>

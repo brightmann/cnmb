@@ -2,11 +2,11 @@ import { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getOGData } from '@/actions/fetch-og-metadata';
+import { ExternalLinkIcon } from 'lucide-react';
 
 import { siteConfig } from '@/lib/config';
 import { getBlogPostBySlug } from '@/lib/mdx';
 import { cn } from '@/lib/utils';
-import { Icons } from '@/components/icons';
 import { ImageWithFallback } from '@/components/shared/image-with-fallback';
 
 interface LinkCardProps {
@@ -73,7 +73,7 @@ export function LinkCard({
                   )}
                 </div>
                 <span>{hostname.replace(/^www\./, '')}</span>
-                <Icons.externalLink className="text-muted-foreground/70 size-3" />
+                <ExternalLinkIcon className="text-muted-foreground/70 size-3" />
               </>
             ) : (
               <span className="flex items-center gap-1.5">

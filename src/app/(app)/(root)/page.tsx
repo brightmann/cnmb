@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ChevronRightIcon } from 'lucide-react';
 
 import { tags } from '@/lib/blog';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { cn, formatDate } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/shadcn-ui/button';
-import { Icons } from '@/components/icons';
 import { AboutCta } from '@/components/shared/about-cta';
 import { LinkBadge } from '@/components/shared/link-badge';
 import { LinkCard } from '@/components/shared/link-card';
@@ -63,7 +63,7 @@ export default async function IndexPage() {
                 className="group inline-flex items-center gap-2"
               >
                 <span>{'See more posts'}</span>
-                <Icons.chevronRight className="size-4 transition-transform group-hover:translate-x-1" />
+                <ChevronRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
@@ -95,7 +95,7 @@ export default async function IndexPage() {
                   className="group inline-flex items-center gap-2"
                 >
                   <span>{'See more posts'}</span>
-                  <Icons.chevronRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  <ChevronRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

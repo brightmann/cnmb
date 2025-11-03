@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 import { Button } from '@/components/shadcn-ui/button';
 import { Separator } from '@/components/shadcn-ui/separator';
-import { BrandIcons } from '@/components/icons/brand-icons';
-import { SiteLogo } from '@/components/icons/site-logo';
 import { ModeSwitcher } from '@/components/layout/mode-switcher';
+import { BrandIcons } from '@/components/shared/brand-icons';
+import { SiteLogo } from '@/components/shared/site-logo';
 
 export function SiteHeader() {
   return (

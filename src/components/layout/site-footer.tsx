@@ -1,10 +1,10 @@
 import Link from 'next/link';
+import { MailIcon, RssIcon } from 'lucide-react';
 
 import { siteConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/shadcn-ui/button';
-import { Icons } from '@/components/icons';
-import { BrandIcons } from '@/components/icons/brand-icons';
+import { BrandIcons } from '@/components/shared/brand-icons';
 
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
@@ -37,7 +37,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               aria-label="Email"
               title="Email (next-minimal-blog -at- example -dot- com)"
             >
-              <Icons.mail className="size-4" />
+              <MailIcon className="size-4" />
             </Link>
           )}
           {siteConfig.links.github && (
@@ -58,7 +58,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             aria-label="RSS"
             title="RSS Feed (cakegaly -dot- com)"
           >
-            <Icons.rss className="size-4" />
+            <RssIcon className="size-4" />
           </Link>
         </div>
       </div>

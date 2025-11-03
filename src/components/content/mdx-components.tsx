@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/shadcn-ui/button';
 import { LinkPreview } from '@/components/content/link-preview';
-import { getIconForLanguageExtension } from '@/components/icons/brand-icons';
+import { getIconForLanguageExtension } from '@/components/shared/brand-icons';
 import { Callout } from '@/components/shared/callout';
 import { CopyButton } from '@/components/shared/copy-button';
 

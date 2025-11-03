@@ -1,6 +1,4 @@
-import type { IconProps } from '@/components/icons';
-
-export const SiteLogo = (props: IconProps) => {
+export const SiteLogo = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
