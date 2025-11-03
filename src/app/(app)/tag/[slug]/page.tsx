@@ -2,7 +2,6 @@ import { tags } from '@/lib/blog';
 import { siteConfig } from '@/lib/config';
 import { getBlogPostsByTagSlug } from '@/lib/mdx';
 import { absoluteUrl, formatDate } from '@/lib/utils';
-
 import { Badge } from '@/components/shadcn-ui/badge';
 import { BrandIcons } from '@/components/icons/brand-icons';
 import { Breadcrumb } from '@/components/layout/breadcrumb';

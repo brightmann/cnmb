@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import { siteConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
-
 import { buttonVariants } from '@/components/shadcn-ui/button';
 import { Icons } from '@/components/icons';
 import { BrandIcons } from '@/components/icons/brand-icons';

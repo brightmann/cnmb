@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { tags } from '@/lib/blog';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { cn, formatDate } from '@/lib/utils';
-
 import { Button, buttonVariants } from '@/components/shadcn-ui/button';
 import { Icons } from '@/components/icons';
 import { AboutCta } from '@/components/shared/about-cta';

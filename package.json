@@ -7,10 +7,11 @@
     "url": "https://cakegaly.com"
   },
   "scripts": {
-    "dev": "next dev --port 8888",
+    "dev": "next dev --turbopack --port 8888",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "start": "next start --port 8888",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "rm -rf .next/ node_modules/"
@@ -72,13 +73,10 @@
       "<THIRD_PARTY_MODULES>",
       "",
       "^types$",
-      "^@/env(.*)$",
       "^@/types/(.*)$",
       "^@/config/(.*)$",
       "^@/lib/(.*)$",
       "^@/hooks/(.*)$",
-      "",
-      "^@/features/(.*)$",
       "^@/components/shadcn-ui/(.*)$",
       "^@/components/(.*)$",
       "^@/styles/(.*)$",
@@ -88,7 +86,8 @@
     ],
     "importOrderParserPlugins": [
       "typescript",
-      "jsx"
+      "jsx",
+      "decorators-legacy"
     ],
     "plugins": [
       "@ianvs/prettier-plugin-sort-imports",

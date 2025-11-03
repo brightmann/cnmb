@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import { siteConfig } from '@/lib/config';
-
 import { Button } from '@/components/shadcn-ui/button';
 import { Separator } from '@/components/shadcn-ui/separator';
 import { BrandIcons } from '@/components/icons/brand-icons';

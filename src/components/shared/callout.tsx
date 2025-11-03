@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-
 import { Icons } from '@/components/icons';
 
 type CalloutType = 'info' | 'note' | 'warning' | 'danger';

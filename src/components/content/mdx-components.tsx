@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
-
 import { Button } from '@/components/shadcn-ui/button';
 import { LinkPreview } from '@/components/content/link-preview';
 import { getIconForLanguageExtension } from '@/components/icons/brand-icons';

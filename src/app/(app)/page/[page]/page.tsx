@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 
 import { getBlogPosts } from '@/lib/mdx';
 import { formatDate } from '@/lib/utils';
-
 import { AboutCta } from '@/components/shared/about-cta';
 import { LinkCard } from '@/components/shared/link-card';
 import { Pagination } from '@/components/shared/pagination';

@@ -6,7 +6,6 @@ import { getOGData } from '@/actions/fetch-og-metadata';
 import { siteConfig } from '@/lib/config';
 import { getBlogPostBySlug } from '@/lib/mdx';
 import { cn } from '@/lib/utils';
-
 import { Icons } from '@/components/icons';
 import { ImageWithFallback } from '@/components/shared/image-with-fallback';
 
