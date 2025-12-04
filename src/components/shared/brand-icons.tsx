@@ -1,6 +1,6 @@
 import { FileIcon } from 'lucide-react';
 
-import type { IconProps } from '@/components/icons';
+type IconProps = React.HTMLAttributes<SVGElement>;
 
 /**
  * BrandIcons are sourced from https://simpleicons.org/.

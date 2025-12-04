@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { ArrowLeftIcon, HomeIcon } from 'lucide-react';
 
 import { Button } from '@/components/shadcn-ui/button';
-import { Icons } from '@/components/icons';
 
 export default function NotFound() {
   return (
@@ -20,7 +20,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button variant="outline" asChild className="gap-2">
             <Link href="/">
-              <Icons.home className="size-4" />
+              <HomeIcon className="size-4" />
               Home
             </Link>
           </Button>
@@ -29,7 +29,7 @@ export default function NotFound() {
             onClick={() => window.history.back()}
             className="gap-2"
           >
-            <Icons.arrowLeft className="size-4" />
+            <ArrowLeftIcon className="size-4" />
             Back
           </Button>
         </div>

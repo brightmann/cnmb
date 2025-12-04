@@ -4,7 +4,6 @@ import * as React from 'react';
 import { CheckIcon, ClipboardIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
-
 import { Button } from '@/components/shadcn-ui/button';
 import {
   Tooltip,

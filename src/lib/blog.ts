@@ -1,4 +1,4 @@
-import { BrandIcons } from '@/components/icons/brand-icons';
+import { BrandIcons } from '@/components/shared/brand-icons';
 
 export const author = {
   slug: 'cakegaly',

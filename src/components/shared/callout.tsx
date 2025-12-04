@@ -1,6 +1,11 @@
-import { cn } from '@/lib/utils';
+import {
+  AlertTriangleIcon,
+  FileTextIcon,
+  InfoIcon,
+  XCircleIcon,
+} from 'lucide-react';
 
-import { Icons } from '@/components/icons';
+import { cn } from '@/lib/utils';
 
 type CalloutType = 'info' | 'note' | 'warning' | 'danger';
 
@@ -22,7 +27,7 @@ const calloutStyles: Record<
   }
 > = {
   info: {
-    icon: Icons.info,
+    icon: InfoIcon,
     title: 'Info',
     containerClasses:
       'border-blue-200 bg-blue-50/50 dark:border-blue-900 dark:bg-blue-950/30',
@@ -30,7 +35,7 @@ const calloutStyles: Record<
     titleClasses: 'text-blue-800 dark:text-blue-300',
   },
   note: {
-    icon: Icons.fileText,
+    icon: FileTextIcon,
     title: 'Note',
     containerClasses:
       'border-slate-200 bg-slate-50/50 dark:border-slate-800 dark:bg-slate-900/30',
@@ -38,7 +43,7 @@ const calloutStyles: Record<
     titleClasses: 'text-slate-800 dark:text-slate-300',
   },
   warning: {
-    icon: Icons.alertTriangle,
+    icon: AlertTriangleIcon,
     title: 'Warning',
     containerClasses:
       'border-amber-200 bg-amber-50/50 dark:border-amber-900 dark:bg-amber-950/30',
@@ -46,7 +51,7 @@ const calloutStyles: Record<
     titleClasses: 'text-amber-800 dark:text-amber-300',
   },
   danger: {
-    icon: Icons.xCircle,
+    icon: XCircleIcon,
     title: 'Danger',
     containerClasses:
       'border-red-200 bg-red-50/50 dark:border-red-900 dark:bg-red-950/30',
