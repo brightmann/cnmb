@@ -2,11 +2,10 @@ import { tags } from '@/lib/blog';
 import { siteConfig } from '@/lib/config';
 import { getBlogPostsByTagSlug } from '@/lib/mdx';
 import { absoluteUrl, formatDate } from '@/lib/utils';
-
 import { Badge } from '@/components/shadcn-ui/badge';
-import { BrandIcons } from '@/components/icons/brand-icons';
 import { Breadcrumb } from '@/components/layout/breadcrumb';
 import { AboutCta } from '@/components/shared/about-cta';
+import { BrandIcons } from '@/components/shared/brand-icons';
 import { LinkCard } from '@/components/shared/link-card';
 
 export const dynamic = 'force-static';

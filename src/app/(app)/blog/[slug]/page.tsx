@@ -4,7 +4,6 @@ import { author, tags } from '@/lib/blog';
 import { siteConfig } from '@/lib/config';
 import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/mdx';
 import { absoluteUrl, formatDate } from '@/lib/utils';
-
 import { ArticleShareButtons } from '@/components/content/article-share-buttons';
 import { Author } from '@/components/content/author';
 import { CustomMDX } from '@/components/content/custom-mdx';

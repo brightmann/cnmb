@@ -4,10 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Autoplay from 'embla-carousel-autoplay';
-import { Pause, Play } from 'lucide-react';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  PauseIcon,
+  PlayIcon,
+} from 'lucide-react';
 
 import { cn } from '@/lib/utils';
-
 import { Button } from '@/components/shadcn-ui/button';
 import {
   Carousel,
@@ -15,7 +19,6 @@ import {
   CarouselItem as UICarouselItem,
   type CarouselApi,
 } from '@/components/shadcn-ui/carousel';
-import { Icons } from '@/components/icons';
 
 interface CarouselItem {
   title: string;
@@ -155,7 +158,7 @@ export function PartialViewCarousel({
           className="size-12 rounded-2xl shadow-lg backdrop-blur-sm transition-all duration-200 hover:scale-105 active:scale-95"
           aria-label="Slide to Prev Item"
         >
-          <Icons.chevronLeft className="size-6" />
+          <ChevronLeftIcon className="size-6" />
         </Button>
         <Button
           onClick={toggleAutoplay}
@@ -165,9 +168,9 @@ export function PartialViewCarousel({
           aria-label={isPlaying ? 'Pause Slide' : 'Play Slide'}
         >
           {isPlaying ? (
-            <Pause className="size-6" />
+            <PauseIcon className="size-6" />
           ) : (
-            <Play className="ml-0.5 size-6" />
+            <PlayIcon className="ml-0.5 size-6" />
           )}
         </Button>
         <Button
@@ -177,7 +180,7 @@ export function PartialViewCarousel({
           className="size-12 rounded-2xl shadow-lg backdrop-blur-sm transition-all duration-200 hover:scale-105 active:scale-95"
           aria-label="Slide to Next Item"
         >
-          <Icons.chevronRight className="size-6" />
+          <ChevronRightIcon className="size-6" />
         </Button>
       </div>
     </div>
