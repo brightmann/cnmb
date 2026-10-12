@@ -6,24 +6,15 @@ import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/mdx';
 import { absoluteUrl, formatDate } from '@/lib/utils';
 import { ArticleShareButtons } from '@/components/content/article-share-buttons';
 import { Author } from '@/components/content/author';
-import { CustomMDX } from '@/components/content/custom-mdx';
+import { CompiledMDX } from '@/components/content/compiled-mdx';
 import { Breadcrumb } from '@/components/layout/breadcrumb';
 import { BlurredHeroImage } from '@/components/shared/blurred-hero-image';
 import { LinkBadge } from '@/components/shared/link-badge';
 
-export const revalidate = false;
-export const dynamic = 'force-static';
-export const dynamicParams = false;
+export const dynamic = 'force-dynamic';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  const allPosts = await getAllBlogPosts();
-  return allPosts.map((post) => ({
-    slug: post.slug,
-  }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
@@ -142,7 +133,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               {/* Article Content */}
               <div className="mb-10">
-                <CustomMDX source={post.rawContent} />
+                <CompiledMDX slug={slug} />
               </div>
 
               {/* Share Buttons */}
