@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       ? [
           {
             link: `/tag/${post.metadata.tags[0]}`,
-            label: tags[post.metadata.tags[0]].name,
+            label: tags[post.metadata.tags[0]]?.name ?? post.metadata.tags[0],
           },
         ]
       : []),
@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <LinkBadge
                         key={slug}
                         link={`/tag/${slug}`}
-                        label={tags[slug].name}
+                        label={tags[slug]?.name ?? slug}
                       />
                     ))}
                   </div>

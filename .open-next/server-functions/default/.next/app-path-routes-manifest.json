@@ -1,0 +1,12 @@
+{
+  "/(app)/(root)/page": "/",
+  "/(app)/blog/[slug]/page": "/blog/[slug]",
+  "/(app)/page/[page]/page": "/page/[page]",
+  "/(app)/tag/[slug]/page": "/tag/[slug]",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/opengraph-image.png/route": "/opengraph-image.png",
+  "/robots.txt/route": "/robots.txt",
+  "/rss.xml/route": "/rss.xml",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
