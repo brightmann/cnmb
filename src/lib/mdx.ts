@@ -1,10 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-
 import { paginateItems, PaginationResult } from '@/lib/pagination';
-
-const blogDir = path.join(process.cwd(), 'src', 'content', 'blog');
+import { generatedPosts } from '@/lib/generated-posts';
 
 export const DEFAULT_BLOG_LIST_LIMIT = 6;
 
@@ -27,11 +22,9 @@ export type BlogPost = MDXData<{
 }>;
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const posts = await getMDXData(blogDir);
-  return posts.sort(
-    (a, b) =>
-      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
-  );
+  // Posts are pre-generated at build time (scripts/build-content.mjs)
+  // to avoid filesystem reads on Cloudflare Workers.
+  return generatedPosts as BlogPost[];
 }
 
 export async function getBlogPosts(
@@ -58,27 +51,4 @@ async function getBlogPost(
 ): Promise<BlogPost | undefined> {
   const posts = await getAllBlogPosts();
   return posts.find(predicate);
-}
-
-async function getMDXData<T>(dir: string): Promise<MDXData<T>[]> {
-  const files = await getMDXFiles(dir);
-  return Promise.all(files.map((file) => readMDXFile<T>(path.join(dir, file))));
-}
-
-async function getMDXFiles(dir: string): Promise<string[]> {
-  return (await fs.promises.readdir(dir)).filter(
-    (file) => path.extname(file) === '.mdx'
-  );
-}
-
-async function readMDXFile<T>(filePath: string): Promise<MDXData<T>> {
-  const rawContent = await fs.promises.readFile(filePath, 'utf-8');
-
-  const { data, content } = matter(rawContent);
-
-  return {
-    metadata: data as Frontmatter<T>,
-    slug: path.basename(filePath, path.extname(filePath)),
-    rawContent: content,
-  };
 }
