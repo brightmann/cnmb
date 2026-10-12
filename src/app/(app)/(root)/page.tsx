@@ -70,67 +70,8 @@ export default async function IndexPage() {
         </section>
       </div>
       <div className="container-wrapper py-8">
-        <div className="container flex flex-col gap-8 lg:flex-row">
-          <section className="flex-1">
-            <div className="flex flex-col gap-1 pb-6">
-              <h2 className="text-2xl font-medium tracking-tight">List View</h2>
-            </div>
-            <div className="flex flex-col gap-2">
-              {allPosts.map((post) => (
-                <LinkCard
-                  key={post.slug}
-                  title={post.metadata.title}
-                  imageUrl={post.metadata.thumbnail || '/og.png'}
-                  link={`/blog/${post.slug}`}
-                  variant="horizontal"
-                  badgeText={formatDate(post.metadata.date)}
-                  description={post.metadata.description}
-                />
-              ))}
-            </div>
-            <div className="mt-10 text-center">
-              <Button asChild variant="ghost" className="h-9 px-2">
-                <Link
-                  href="/page/2"
-                  className="group inline-flex items-center gap-2"
-                >
-                  <span>{'See more posts'}</span>
-                  <ChevronRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-          </section>
-
-          <aside className="sticky mt-8 shrink-0 lg:bottom-6 lg:mt-0 lg:w-80 lg:self-end">
-            <section className="pb-6">
-              <div className="flex flex-col gap-1 pb-6">
-                <h2 className="text-2xl font-medium tracking-tight">
-                  Compact List View
-                </h2>
-              </div>
-              <div className="flex flex-col gap-2">
-                {allPosts.slice(0, 5).map((post) => (
-                  <LinkCard
-                    key={post.slug}
-                    title={post.metadata.title}
-                    imageUrl={post.metadata.thumbnail || '/og.png'}
-                    link={`/blog/${post.slug}`}
-                    variant="compact"
-                    badgeText={formatDate(post.metadata.date)}
-                  />
-                ))}
-              </div>
-              <Link
-                href="/page/2"
-                className={cn(
-                  buttonVariants({ variant: 'link' }),
-                  'mt-4 ml-auto block px-0 text-end text-xs font-normal'
-                )}
-              >
-                {'See more posts'}
-              </Link>
-            </section>
-
+        <div className="container">
+          <aside>
             <section className="pb-6">
               <div className="flex flex-col gap-1 pb-6">
                 <h2 className="text-2xl font-medium tracking-tight">Tags</h2>
