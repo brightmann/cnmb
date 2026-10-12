@@ -10,7 +10,6 @@ import { AboutCta } from '@/components/shared/about-cta';
 import { LinkBadge } from '@/components/shared/link-badge';
 import { LinkCard } from '@/components/shared/link-card';
 import { PartialViewCarousel } from '@/components/shared/partial-view-carousel';
-import { ViewpointIndicator } from '@/components/shared/viewpoint-indicator';
 
 const title = 'Lightweight and Minimalistic Next.js Blog Template';
 const description =
@@ -87,10 +86,6 @@ export default async function IndexPage() {
                 ))}
               </div>
             </section>
-
-            <div className="my-4">
-              <ViewpointIndicator />
-            </div>
           </aside>
         </div>
       </div>
