@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 import { getBlogPosts } from '@/lib/mdx';
 import { formatDate } from '@/lib/utils';
@@ -6,22 +6,10 @@ import { AboutCta } from '@/components/shared/about-cta';
 import { LinkCard } from '@/components/shared/link-card';
 import { Pagination } from '@/components/shared/pagination';
 
-export const dynamic = 'force-static';
-export const revalidate = false;
-export const dynamicParams = false;
+export const dynamic = 'force-dynamic';
 
 interface BlogListPageProps {
   params: Promise<{ page: string }>;
-}
-
-export async function generateStaticParams() {
-  const { totalPages } = await getBlogPosts();
-
-  return await Promise.all(
-    Array.from({ length: totalPages }, (_, i) => ({
-      page: String(i + 1),
-    }))
-  );
 }
 
 export default async function BlogListPage({ params }: BlogListPageProps) {
@@ -30,6 +18,10 @@ export default async function BlogListPage({ params }: BlogListPageProps) {
 
   if (isNaN(pageNum)) {
     return notFound();
+  }
+
+  if (pageNum === 1) {
+    redirect('/');
   }
 
   const {
