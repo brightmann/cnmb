@@ -59,7 +59,7 @@ export default async function IndexPage() {
           <div className="mt-10 text-end">
             <Button asChild variant="ghost" className="h-9 px-2">
               <Link
-                href="/page/1"
+                href="/page/2"
                 className="group inline-flex items-center gap-2"
               >
                 <span>{'See more posts'}</span>
@@ -91,7 +91,7 @@ export default async function IndexPage() {
             <div className="mt-10 text-center">
               <Button asChild variant="ghost" className="h-9 px-2">
                 <Link
-                  href="/page/1"
+                  href="/page/2"
                   className="group inline-flex items-center gap-2"
                 >
                   <span>{'See more posts'}</span>
@@ -121,7 +121,7 @@ export default async function IndexPage() {
                 ))}
               </div>
               <Link
-                href="/page/1"
+                href="/page/2"
                 className={cn(
                   buttonVariants({ variant: 'link' }),
                   'mt-4 ml-auto block px-0 text-end text-xs font-normal'
