@@ -8,7 +8,6 @@ import { cn, formatDate } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/shadcn-ui/button';
 import { LinkBadge } from '@/components/shared/link-badge';
 import { LinkCard } from '@/components/shared/link-card';
-import { PartialViewCarousel } from '@/components/shared/partial-view-carousel';
 
 const title = 'Lightweight and Minimalistic Next.js Blog Template';
 const description =
@@ -27,10 +26,6 @@ export default async function IndexPage() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <section className="py-8">
-        <h2 className="sr-only">Hero Carousel Items</h2>
-        <HeroCarousel />
-      </section>
       <div className="container-wrapper">
         <section className="container border-b py-6">
           <div className="flex flex-col gap-1 pb-6">
@@ -85,16 +80,4 @@ export default async function IndexPage() {
       </div>
     </div>
   );
-}
-
-async function HeroCarousel() {
-  const allPosts = await getAllBlogPosts();
-
-  const carouselItems = allPosts.slice(0, 5).map((post) => ({
-    title: post.metadata.title,
-    href: `/blog/${post.slug}`,
-    imageUrl: post.metadata.thumbnail || '/og.png',
-  }));
-
-  return <PartialViewCarousel items={carouselItems} />;
 }
