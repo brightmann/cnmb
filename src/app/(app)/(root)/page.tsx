@@ -6,7 +6,6 @@ import { tags } from '@/lib/blog';
 import { getAllBlogPosts } from '@/lib/mdx';
 import { cn, formatDate } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/shadcn-ui/button';
-import { AboutCta } from '@/components/shared/about-cta';
 import { LinkBadge } from '@/components/shared/link-badge';
 import { LinkCard } from '@/components/shared/link-card';
 import { PartialViewCarousel } from '@/components/shared/partial-view-carousel';
@@ -32,11 +31,6 @@ export default async function IndexPage() {
         <h2 className="sr-only">Hero Carousel Items</h2>
         <HeroCarousel />
       </section>
-      <div className="container-wrapper">
-        <div className="container py-6">
-          <AboutCta />
-        </div>
-      </div>
       <div className="container-wrapper">
         <section className="container border-b py-6">
           <div className="flex flex-col gap-1 pb-6">
